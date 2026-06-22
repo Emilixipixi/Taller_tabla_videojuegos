@@ -1,0 +1,111 @@
+/* Contenedor con efecto Glassmorphism futurista */
+.tabla-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 30px;
+  border-radius: 16px;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+/* Estructura de la tabla */
+.tabla-videojuegos {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: separate;
+  border-spacing: 0 8px; /* Espaciado para hacer que las filas parezcan tarjetas flotantes */
+}
+
+/* Encabezados flotantes y minimalistas */
+.tabla-videojuegos thead {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.tabla-videojuegos th {
+  padding: 16px 20px;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Filas como celdas/tarjetas independientes */
+.tabla-videojuegos td {
+  padding: 18px 20px;
+  color: #e2e8f0;
+  background-color: rgba(30, 41, 59, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Redondear esquinas de las filas flotantes */
+.tabla-videojuegos tbody tr td:first-child {
+  border-left: 1px solid rgba(255, 255, 255, 0.03);
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.tabla-videojuegos tbody tr td:last-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* Efecto Hover interactivo de Neón */
+.tabla-videojuegos tbody tr:hover td {
+  background-color: rgba(51, 65, 85, 0.8);
+  color: #fff;
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.4); /* Destello índigo */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Barra de progreso estilizada de Gamers con gradiente de neón */
+progress {
+  width: 130px;
+  height: 8px;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: rgba(15, 23, 42, 0.8);
+  border-radius: 20px;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+}
+
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: 20px;
+  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+}
+
+/* Optimización Responsive */
+@media (max-width: 768px) {
+  .tabla-container {
+    background: rgba(15, 23, 42, 0.85);
+    padding: 5px;
+  }
+
+  .tabla-videojuegos td {
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+
+  progress {
+    width: 80px;
+    height: 6px;
+  }
+}

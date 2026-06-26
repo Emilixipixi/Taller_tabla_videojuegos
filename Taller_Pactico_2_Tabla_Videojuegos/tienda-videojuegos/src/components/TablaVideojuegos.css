@@ -1,111 +1,207 @@
-/* Contenedor con efecto Glassmorphism futurista */
-.tabla-container {
-  width: 100%;
-  overflow-x: auto;
-  margin-top: 30px;
-  border-radius: 16px;
-  background: rgba(15, 23, 42, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  padding: 10px;
+:root {
+  --gris-fondo: #15171a;
+  --gris-tarjeta: #1d1f24;
+  --gris-tarjeta-header: #232630;
+  --gris-borde: #2a2d34;
+  --cobre: #c89866;
+  --cobre-suave: rgba(200, 152, 102, 0.14);
+  --texto-claro: #ece9e4;
+  --texto-tenue: #8b8d93;
+  --verde: #5fd394;
+  --verde-bg: rgba(95, 211, 148, 0.12);
+  --rojo: #e07a7a;
+  --rojo-bg: rgba(224, 122, 122, 0.12);
 }
 
-/* Estructura de la tabla */
+* {
+  box-sizing: border-box;
+}
+
+.videojuegos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 56px 24px 60px;
+}
+
+.videojuegos-header {
+  margin-bottom: 28px;
+  text-align: left;
+}
+
+.videojuegos-header h2 {
+  margin: 0;
+  color: var(--texto-claro);
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.videojuegos-header p {
+  margin-top: 6px;
+  color: var(--cobre);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tabla-container {
+  background: var(--gris-tarjeta);
+  border: 1px solid var(--gris-borde);
+  border-radius: 16px;
+  overflow-x: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
 .tabla-videojuegos {
   width: 100%;
-  min-width: 900px;
-  border-collapse: separate;
-  border-spacing: 0 8px; /* Espaciado para hacer que las filas parezcan tarjetas flotantes */
+  border-collapse: collapse;
+  min-width: 950px;
 }
 
-/* Encabezados flotantes y minimalistas */
 .tabla-videojuegos thead {
-  color: #94a3b8;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
+  background: var(--gris-tarjeta-header);
 }
 
 .tabla-videojuegos th {
-  padding: 16px 20px;
-  font-weight: 700;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  padding: 18px 16px;
+  text-align: left;
+  color: var(--texto-tenue);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--gris-borde);
 }
 
-/* Filas como celdas/tarjetas independientes */
 .tabla-videojuegos td {
-  padding: 18px 20px;
-  color: #e2e8f0;
-  background-color: rgba(30, 41, 59, 0.5);
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 16px;
+  border-top: 1px solid var(--gris-borde);
+  color: var(--texto-claro);
+  font-size: 0.95rem;
 }
 
-/* Redondear esquinas de las filas flotantes */
-.tabla-videojuegos tbody tr td:first-child {
-  border-left: 1px solid rgba(255, 255, 255, 0.03);
-  border-top-left-radius: 12px;
-  border-bottom-left-radius: 12px;
+.tabla-videojuegos tbody tr {
+  transition: background-color 0.25s ease;
 }
 
-.tabla-videojuegos tbody tr td:last-child {
-  border-right: 1px solid rgba(255, 255, 255, 0.03);
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+.tabla-videojuegos tbody tr:hover {
+  background: rgba(255, 255, 255, 0.025);
 }
 
-/* Efecto Hover interactivo de Neón */
-.tabla-videojuegos tbody tr:hover td {
-  background-color: rgba(51, 65, 85, 0.8);
-  color: #fff;
-  transform: translateY(-2px);
-  border-color: rgba(99, 102, 241, 0.4); /* Destello índigo */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+.estado {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
-/* Barra de progreso estilizada de Gamers con gradiente de neón */
+.estado.disponible {
+  background: var(--verde-bg);
+  color: var(--verde);
+}
+
+.estado.no-disponible {
+  background: var(--rojo-bg);
+  color: var(--rojo);
+}
+
+.progreso-celda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 progress {
-  width: 130px;
-  height: 8px;
+  width: 110px;
+  height: 7px;
   vertical-align: middle;
   -webkit-appearance: none;
   appearance: none;
 }
 
 progress::-webkit-progress-bar {
-  background-color: rgba(15, 23, 42, 0.8);
+  background-color: var(--gris-fondo);
   border-radius: 20px;
 }
 
 progress::-webkit-progress-value {
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  background: var(--cobre);
   border-radius: 20px;
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
 }
 
 progress::-moz-progress-bar {
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  background: var(--cobre);
   border-radius: 20px;
-  box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
 }
 
-/* Optimización Responsive */
+.progreso-texto {
+  color: var(--texto-tenue);
+  font-size: 0.82rem;
+  min-width: 36px;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-editar,
+.btn-eliminar {
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+
+.btn-editar {
+  background: var(--cobre-suave);
+  color: var(--cobre);
+  border-color: rgba(200, 152, 102, 0.35);
+}
+
+.btn-editar:hover {
+  background: var(--cobre);
+  color: #1d1f24;
+  transform: translateY(-2px);
+}
+
+.btn-eliminar {
+  background: var(--rojo-bg);
+  color: var(--rojo);
+  border-color: rgba(224, 122, 122, 0.35);
+}
+
+.btn-eliminar:hover {
+  background: var(--rojo);
+  color: #1d1f24;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
-  .tabla-container {
-    background: rgba(15, 23, 42, 0.85);
-    padding: 5px;
+  .videojuegos-container {
+    padding: 40px 16px 48px;
   }
 
+  .videojuegos-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .tabla-videojuegos th,
   .tabla-videojuegos td {
-    padding: 12px 14px;
-    font-size: 0.85rem;
+    padding: 12px;
+    font-size: 0.88rem;
   }
 
-  progress {
-    width: 80px;
-    height: 6px;
+  .btn-editar,
+  .btn-eliminar {
+    width: 100%;
+    text-align: center;
   }
 }

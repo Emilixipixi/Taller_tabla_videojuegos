@@ -7,6 +7,8 @@
   --cobre-suave: rgba(200, 152, 102, 0.14);
   --texto-claro: #ece9e4;
   --texto-tenue: #8b8d93;
+  --rojo: #e07a7a;
+  --rojo-bg: rgba(224, 122, 122, 0.12);
 }
 
 .formulario-videojuego {
@@ -32,6 +34,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  position: relative;
 }
 
 .campo label {
@@ -43,23 +46,27 @@
 }
 
 .campo input,
-.campo select {
+.campo select,
+.campo textarea {
   background: var(--gris-input);
   border: 1px solid var(--gris-borde);
   border-radius: 8px;
   padding: 11px 14px;
   color: var(--texto-claro);
   font-size: 0.95rem;
+  font-family: inherit;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s ease;
 }
 
-.campo input::placeholder {
+.campo input::placeholder,
+.campo textarea::placeholder {
   color: var(--texto-tenue);
 }
 
 .campo input:focus,
-.campo select:focus {
+.campo select:focus,
+.campo textarea:focus {
   border-color: var(--cobre);
   box-shadow: 0 0 0 3px var(--cobre-suave);
 }
@@ -77,6 +84,48 @@
 .campo select option {
   background: var(--gris-tarjeta);
   color: var(--texto-claro);
+}
+
+.campo input[type="date"] {
+  color-scheme: dark;
+}
+
+.campo-textarea {
+  width: 100%;
+}
+
+.campo textarea {
+  resize: none;
+  min-height: 72px;
+  line-height: 1.5;
+}
+
+.campo textarea:focus {
+  min-height: 130px;
+}
+
+.contador-caracteres {
+  align-self: flex-end;
+  font-size: 0.74rem;
+  color: var(--texto-tenue);
+}
+
+.error-mensaje {
+  color: var(--rojo);
+  font-size: 0.78rem;
+  font-weight: 500;
+  animation: errorFadeIn 0.25s ease;
+}
+
+@keyframes errorFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .form-footer {

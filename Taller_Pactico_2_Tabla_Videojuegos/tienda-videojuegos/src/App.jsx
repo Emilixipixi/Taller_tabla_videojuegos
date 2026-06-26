@@ -1,21 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { data } from './data/videojuegos'
 import TablaVideojuegos from './components/TablaVideojuegos'
 import FormularioVideojuego from './components/FormularioVideojuego'
 import Navbar from './components/Navbar'
 import PaginaNoEncontrada from './components/PaginaNoEncontrada'
+import AlertaNotificacion from './components/AlertaNotificacion'
 
 function App() {
-  const [videojuegos, setVideojuegos] = useState(data);
+  const [videojuegos, setVideojuegos] = useState(() => {
+    const datosGuardados = localStorage.getItem("lista_videojuegos");
+    return datosGuardados ? JSON.parse(datosGuardados) : data;
+  });
+
+  const [toast, setToast] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("lista_videojuegos", JSON.stringify(videojuegos));
+  }, [videojuegos]);
 
   function agregarVideojuego(videojuegoNuevo) {
     setVideojuegos([...videojuegos, videojuegoNuevo]);
+    setToast("Videojuego agregado correctamente");
   }
 
   function eliminarVideojuego(id) {
     const filtrados = videojuegos.filter(juego => juego.id !== id);
     setVideojuegos(filtrados);
+    setToast("Videojuego eliminado correctamente");
   }
 
   function editarVideojuego(videojuegoEditado) {
@@ -27,6 +39,7 @@ function App() {
       }
     });
     setVideojuegos(actualizados);
+    setToast("Videojuego actualizado correctamente");
   }
 
   function manejarGuardar(videojuego) {
@@ -42,6 +55,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <AlertaNotificacion mensaje={toast} onCerrar={() => setToast(null)} />
       <Routes>
         <Route
           path="/"

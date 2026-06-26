@@ -7,7 +7,10 @@ const data = [
     lanzamiento: 2023,
     precio: 59.99,
     disponible: true,
-    progreso: 0.85
+    progreso: 0.85,
+    fechaLanzamiento: "2023-05-12",
+    sinopsis: "Link explora los cielos de Hyrule combinando objetos para resolver puzles y enfrentar nuevas amenazas.",
+    calificacionCritica: 96
   },
   {
     id: 2,
@@ -17,7 +20,10 @@ const data = [
     lanzamiento: 2022,
     precio: 69.99,
     disponible: true,
-    progreso: 0.72
+    progreso: 0.72,
+    fechaLanzamiento: "2022-11-09",
+    sinopsis: "Kratos y Atreus se enfrentan al inminente Ragnarök en un viaje por los nueve reinos nórdicos.",
+    calificacionCritica: 94
   },
   {
     id: 3,
@@ -27,7 +33,10 @@ const data = [
     lanzamiento: 2011,
     precio: 29.99,
     disponible: true,
-    progreso: 0.95
+    progreso: 0.95,
+    fechaLanzamiento: "2011-11-18",
+    sinopsis: "Construye, explora y sobrevive en un mundo generado proceduralmente hecho de bloques.",
+    calificacionCritica: 90
   },
   {
     id: 4,
@@ -37,7 +46,10 @@ const data = [
     lanzamiento: 2020,
     precio: 49.99,
     disponible: false,
-    progreso: 0.40
+    progreso: 0.40,
+    fechaLanzamiento: "2020-12-10",
+    sinopsis: "Un mercenario busca un implante que otorga la inmortalidad en la peligrosa Night City.",
+    calificacionCritica: 86
   },
   {
     id: 5,
@@ -47,7 +59,10 @@ const data = [
     lanzamiento: 2022,
     precio: 59.99,
     disponible: true,
-    progreso: 0.68
+    progreso: 0.68,
+    fechaLanzamiento: "2022-02-25",
+    sinopsis: "Un mundo abierto de fantasía oscura donde el jugador busca restaurar el Anillo de Elden.",
+    calificacionCritica: 97
   },
   {
     id: 6,
@@ -57,7 +72,10 @@ const data = [
     lanzamiento: 2025,
     precio: 69.99,
     disponible: true,
-    progreso: 0.30
+    progreso: 0.30,
+    fechaLanzamiento: "2025-09-26",
+    sinopsis: "La última entrega de la saga futbolística con licencias oficiales y modos en línea renovados.",
+    calificacionCritica: 78
   },
   {
     id: 7,
@@ -67,7 +85,10 @@ const data = [
     lanzamiento: 2018,
     precio: 39.99,
     disponible: true,
-    progreso: 1.0
+    progreso: 1.0,
+    fechaLanzamiento: "2018-10-26",
+    sinopsis: "Arthur Morgan vive los últimos días del viejo oeste mientras su banda se desmorona.",
+    calificacionCritica: 97
   },
   {
     id: 8,
@@ -77,7 +98,10 @@ const data = [
     lanzamiento: 2017,
     precio: 14.99,
     disponible: false,
-    progreso: 0.55
+    progreso: 0.55,
+    fechaLanzamiento: "2017-02-24",
+    sinopsis: "Un pequeño caballero explora las profundidades de un reino insectoide en ruinas.",
+    calificacionCritica: 90
   },
   {
     id: 9,
@@ -87,7 +111,10 @@ const data = [
     lanzamiento: 2013,
     precio: 29.99,
     disponible: true,
-    progreso: 0.88
+    progreso: 0.88,
+    fechaLanzamiento: "2013-09-17",
+    sinopsis: "Tres criminales se cruzan en una serie de atracos en la ciudad de Los Santos.",
+    calificacionCritica: 96
   },
   {
     id: 10,
@@ -97,7 +124,10 @@ const data = [
     lanzamiento: 2020,
     precio: 0,
     disponible: true,
-    progreso: 0.77
+    progreso: 0.77,
+    fechaLanzamiento: "2020-06-02",
+    sinopsis: "Shooter táctico por equipos donde agentes con habilidades únicas compiten por el control del mapa.",
+    calificacionCritica: 80
   },
   {
     id: 11,
@@ -107,7 +137,10 @@ const data = [
     lanzamiento: 2020,
     precio: 49.99,
     disponible: true,
-    progreso: 0.92
+    progreso: 0.92,
+    fechaLanzamiento: "2020-03-20",
+    sinopsis: "Crea tu propia isla, decórala y convive con simpáticos vecinos animales.",
+    calificacionCritica: 90
   },
   {
     id: 12,
@@ -117,7 +150,10 @@ const data = [
     lanzamiento: 2015,
     precio: 19.99,
     disponible: true,
-    progreso: 0.65
+    progreso: 0.65,
+    fechaLanzamiento: "2015-05-19",
+    sinopsis: "Geralt de Rivia busca a su hija adoptiva en un vasto mundo abierto lleno de monstruos.",
+    calificacionCritica: 93
   }
 ]
 
